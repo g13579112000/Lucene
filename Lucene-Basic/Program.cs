@@ -41,7 +41,7 @@ class App
         //選擇分詞器
         var analyzer = new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_CURRENT);
 
-        //使用RAM提高效能
+        //使用RAM可以提高速度，相對來說較吃資源
         //var directory = new RAMDirectory(dir);
 
         CreateIndex(_service.GetProductsInformation(), directory, analyzer);
@@ -69,7 +69,7 @@ class App
             var document = new Document();
             document.Add(new Field("Id", index.Id.ToString(), Field.Store.YES, Field.Index.NO));
             document.Add(new Field("Name", index.Name, Field.Store.YES, Field.Index.ANALYZED));
-            document.Add(new Field("Description", index.Description, Field.Store.YES, Field.Index.ANALYZED));
+            document.Add(new Field("Description", index.Description, Field.Store.NO, Field.Index.ANALYZED_NO_NORMS));
             indexWriter.AddDocument(document);
         }
 
@@ -95,9 +95,11 @@ class App
             return;
         }
 
+        Document doc;
+
         foreach (var hit in hits.ScoreDocs)
         {
-            Document doc = indexSearcher.Doc(hit.Doc);
+            doc = indexSearcher.Doc(hit.Doc);
             Console.WriteLine("Score :" + hit.Score + ", Id :" + doc.Get("Id") + ", Name :" + doc.Get("Name") + ", Description :" + doc.Get("Description"));
         }
     }
@@ -140,6 +142,6 @@ class EnService : IService
 class Product
 {
     public long Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public string Name { get; set; } = null!;
+    public string Description { get; set; } = null!;
 }
