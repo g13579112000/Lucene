@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lucene-Basic", "Lucene-Basic\Lucene-Basic.csproj", "{88C7826C-A8C2-46FD-8336-050B43F27883}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucene-Boost", "Lucene-Boost\Lucene-Boost.csproj", "{7429BFD5-5A6F-445E-B310-9EF9AF29823C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{88C7826C-A8C2-46FD-8336-050B43F27883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88C7826C-A8C2-46FD-8336-050B43F27883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88C7826C-A8C2-46FD-8336-050B43F27883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7429BFD5-5A6F-445E-B310-9EF9AF29823C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7429BFD5-5A6F-445E-B310-9EF9AF29823C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7429BFD5-5A6F-445E-B310-9EF9AF29823C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7429BFD5-5A6F-445E-B310-9EF9AF29823C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
